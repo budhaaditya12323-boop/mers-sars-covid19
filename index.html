@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bayes Diagnosa 3 Penyakit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a3b5d',
+                        secondary: '#007bff',
+                        p001: '#17a2b8',
+                        p002: '#28a745',
+                        p003: '#dc3545',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans antialiased p-4 md:p-6">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-8">
+
+        <!-- HEADER -->
+        <div class="border-b border-gray-200 pb-4 mb-6">
+            <h1 class="text-2xl md:text-3xl font-bold text-primary flex items-center gap-2">
+                🧬 Diagnosa 3 Penyakit
+            </h1>
+            <p class="text-gray-600 text-sm mt-1">
+                Metode: <span class="font-semibold">Naïve Bayes</span> dengan data training 30 pasien
+            </p>
+            <div class="flex flex-wrap gap-3 mt-2">
+                <span class="inline-block bg-p001 text-white text-xs font-bold px-3 py-1 rounded-full">P001 - MERS</span>
+                <span class="inline-block bg-p002 text-white text-xs font-bold px-3 py-1 rounded-full">P002 - SARS</span>
+                <span class="inline-block bg-p003 text-white text-xs font-bold px-3 py-1 rounded-full">P003 - COVID-19</span>
+            </div>
+        </div>
+
+        <!-- GEJALA -->
+        <div class="mb-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-3">⚙️ Pilih Gejala Pasien</h2>
+            <div id="symptomsContainer" class="flex flex-wrap gap-2"></div>
+            <div class="mt-4 flex flex-wrap gap-3">
+                <button id="diagnoseBtn" class="bg-secondary hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-lg transition shadow-sm">
+                    🔍 Diagnosa
+                </button>
+                <button id="resetBtn" class="bg-gray-500 hover:bg-gray-600 text-white font-medium px-6 py-2 rounded-lg transition shadow-sm">
+                    ↺ Reset
+                </button>
+                <span id="activeInfo" class="text-sm text-gray-500 self-center"></span>
+            </div>
+        </div>
+
+        <!-- HASIL -->
+        <div class="mb-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-3">📊 Hasil Diagnosa</h2>
+            <div id="resultDetail" class="bg-blue-50 border border-blue-200 rounded-xl p-4 text-gray-700 text-sm">
+                💡 Silakan pilih gejala pasien, lalu klik tombol <strong>"Diagnosa"</strong>.
+            </div>
+        </div>
+
+        <!-- DETAIL PERHITUNGAN -->
+        <div>
+            <h2 class="text-lg font-semibold text-gray-800 mb-3">📝 Detail Perhitungan</h2>
+            <div id="stepContent" class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-gray-700 text-sm overflow-x-auto">
+                Belum ada perhitungan. Pilih gejala dan klik Diagnosa.
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- SCRIPT MODULE -->
+    <!-- ========================================================= -->
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>
